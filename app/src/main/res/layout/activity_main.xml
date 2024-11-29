@@ -2,18 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-        >
+    android:padding="20dp">
 
+    <!-- Hình ảnh góc trên bên trái -->
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="348dp"
         android:src="@drawable/cancel" />
 
+    <!-- Hình ảnh góc trên bên phải -->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="40dp"
@@ -21,57 +22,151 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="15dp"
         android:src="@drawable/list" />
 
+    <!-- TextView: Hello -->
     <TextView
         android:id="@+id/textview2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_alignParentEnd="true"
+        android:layout_below="@id/imageView"
+        android:layout_alignParentStart="true"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="283dp"
         android:text="Hello, Alex!"
-        android:textSize="20dp"
-       />
+        android:textSize="20sp" />
 
+    <!-- TextView: Tasks -->
     <TextView
         android:id="@+id/textview3"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="257dp"
-        android:text="You've got 5 tarks today"
-        android:textSize="20dp"
-
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:layout_margin="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textview3"
+        android:layout_below="@id/textview2"
+        android:layout_marginTop="8dp"
+        android:text="You've got 5 tasks today"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- LinearLayout: Search bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textview3"
+        android:layout_marginTop="16dp"
         android:background="@drawable/edittext_bg"
-        >
+        android:orientation="horizontal"
+        android:padding="10dp">
+
         <ImageView
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/searchl"
+            android:layout_marginEnd="10dp" />
+
         <TextView
-            android:layout_margin="5dp"
-            android:layout_width="200dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Search something"
-
-            />
-
+            android:textSize="16sp" />
     </LinearLayout>
 
+    <!-- CardView: Nội dung chính -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView2"
+        android:layout_marginTop="150dp"
+        android:id="@+id/box3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Hello world! Chào mừng bạn đến với giao diện chính của Trần Công Hiếu"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:src="@drawable/youtube" />
 
 
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- TextView: My tasks -->
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/box3"
+        android:layout_marginTop="16dp"
+        android:text="My tasks"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!-- LinearLayout: Tab Menu -->
+    <LinearLayout
+        android:id="@+id/box4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text3"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recently"
+            android:padding="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today"
+            android:padding="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upcoming"
+            android:padding="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Later"
+            android:padding="20dp" />
+    </LinearLayout>
+
+    <!-- LinearLayout: CardView cho My tasks -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/box4"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:backgroundTint="#B4B3B3"
+            android:layout_marginEnd="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:backgroundTint="#B4B3B3"
+            android:layout_marginEnd="10dp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:backgroundTint="#B4B3B3" />
+    </LinearLayout>
 </RelativeLayout>

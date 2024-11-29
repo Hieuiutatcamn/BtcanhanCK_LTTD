@@ -1,5 +1,6 @@
 package com.example.tranconghieu_22115053122113_btcanhancuoiki;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,11 +11,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import androidx.appcompat.app.AppCompatActivity;
 
 public class Login_activity extends AppCompatActivity {
 
@@ -28,8 +24,16 @@ public class Login_activity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button button1 = findViewById(R.id.button1);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Khi nhấn vào nút, mở Activity thứ hai
+                Intent intent = new Intent(Login_activity.this, Main_activity.class);
+                startActivity(intent);
+            }
+        });
     }
-
-
 
 }

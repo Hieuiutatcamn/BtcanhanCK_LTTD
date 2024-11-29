@@ -12,15 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TranCongHieu_22115053122113_BTcanhancuoiki"
         tools:targetApi="31">
+
+        <!-- Định nghĩa Login Activity -->
         <activity
             android:name=".Login_activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Định nghĩa Main Activity -->
+        <activity
+            android:name=".Main_activity"
+            android:exported="false" />
     </application>
 
 </manifest>
